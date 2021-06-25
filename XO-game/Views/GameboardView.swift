@@ -17,6 +17,8 @@ public class GameboardView: UIView {
     
     public private(set) var markViewForPosition: [GameboardPosition: MarkView] = [:]
     
+    private var allPossiblePositions: [GameboardPosition]?
+    
     // MARK: - Constants
     
     internal struct Constants {
@@ -39,6 +41,7 @@ public class GameboardView: UIView {
         for (_, markView) in markViewForPosition {
             markView.removeFromSuperview()
         }
+        setAllPossiblePositions()
         markViewForPosition = [:]
     }
     
@@ -59,6 +62,27 @@ public class GameboardView: UIView {
         }
         markViewForPosition[position] = nil
         markView.removeFromSuperview()
+    }
+    
+    public func setAllPossiblePositions() {
+        var possiblePositions: [GameboardPosition] = []
+        
+        for row in 0...GameboardSize.rows - 1 {
+            for colomn in 0...GameboardSize.columns - 1 {
+                possiblePositions.append(GameboardPosition(column: colomn, row: row))
+            }
+        }
+        allPossiblePositions = possiblePositions
+    }
+    
+    func getRandomPossiblePosition() -> GameboardPosition? {
+        guard let position = allPossiblePositions?.randomElement() else { return nil }
+        return position
+    }
+    
+    public func deleteFromAllPossiblePositions(position: GameboardPosition) {
+        guard let index = allPossiblePositions?.firstIndex(of: position) else { return }
+        allPossiblePositions?.remove(at: index)
     }
     
     // MARK: - UIView

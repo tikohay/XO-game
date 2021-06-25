@@ -26,7 +26,6 @@
                                 <state key="normal" title="Играть с компьютером"/>
                                 <connections>
                                     <action selector="playWithComputerButtonTapped:" destination="R6C-xN-weN" eventType="touchUpInside" id="9Zx-gd-r14"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="MdA-Zx-QZK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7f-Eg-MXD">
@@ -38,7 +37,6 @@
                                 <state key="normal" title="Играть вдвоем"/>
                                 <connections>
                                     <action selector="twoPlayersButtonTapped:" destination="R6C-xN-weN" eventType="touchUpInside" id="bDY-cv-AEq"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="SMa-bk-pmL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -51,6 +49,9 @@
                             <constraint firstItem="O7f-Eg-MXD" firstAttribute="centerX" secondItem="JHZ-xh-Ytl" secondAttribute="centerX" id="qun-HP-LWp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ToGameVC" id="a8t-Nh-fFI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a8-Mi-qFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -152,9 +153,6 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="SMa-bk-pmL"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

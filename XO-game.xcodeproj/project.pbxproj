@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C2C850E26862767007162B4 /* BotGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C850D26862767007162B4 /* BotGameState.swift */; };
+		3C2C851126862FD9007162B4 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C851026862FD9007162B4 /* PlayerState.swift */; };
 		3CDA6A632684D19F00A4754A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA6A622684D19F00A4754A /* MainViewController.swift */; };
 		BAABFA69267BBAE800BA673D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABFA68267BBAE800BA673D /* GameState.swift */; };
 		BAABFA6B267BBB5C00BA673D /* PlayerGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABFA6A267BBB5C00BA673D /* PlayerGameState.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C2C850D26862767007162B4 /* BotGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotGameState.swift; sourceTree = "<group>"; };
+		3C2C851026862FD9007162B4 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
 		3CDA6A622684D19F00A4754A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BAABFA68267BBAE800BA673D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		BAABFA6A267BBB5C00BA673D /* PlayerGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameState.swift; sourceTree = "<group>"; };
@@ -77,7 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				BAABFA68267BBAE800BA673D /* GameState.swift */,
+				3C2C851026862FD9007162B4 /* PlayerState.swift */,
 				BAABFA6A267BBB5C00BA673D /* PlayerGameState.swift */,
+				3C2C850D26862767007162B4 /* BotGameState.swift */,
 				BAABFA6C267BBD9000BA673D /* GameEndState.swift */,
 			);
 			path = State;
@@ -241,8 +247,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CDA6A632684D19F00A4754A /* MainViewController.swift in Sources */,
+				3C2C851126862FD9007162B4 /* PlayerState.swift in Sources */,
 				F874E4732224621100364CAE /* GameViewController.swift in Sources */,
 				BAABFA79267BD3DD00BA673D /* LogInvoker.swift in Sources */,
+				3C2C850E26862767007162B4 /* BotGameState.swift in Sources */,
 				F874E4DD2225C25D00364CAE /* GameboardPosition.swift in Sources */,
 				F874E4DF2225C76000364CAE /* MarkView.swift in Sources */,
 				F874E4F12225DFF700364CAE /* Referee.swift in Sources */,

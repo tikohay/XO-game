@@ -1,14 +1,14 @@
 //
-//  PlayerGameState.swift
+//  BotGameState.swift
 //  XO-game
 //
-//  Created by Veaceslav Chirita on 17.06.2021.
+//  Created by Karahanyan Levon on 25.06.2021.
 //  Copyright © 2021 plasmon. All rights reserved.
 //
 
 import Foundation
 
-class PlayerGameState: PlayerState {
+class BotGameState: PlayerState {
     
     var isMoveCompleted: Bool = false
     
@@ -19,8 +19,8 @@ class PlayerGameState: PlayerState {
     
     let markViewPrototype: MarkView
     
-    
-    init(player: Player, gameViewController: GameViewController,
+    init(player: Player,
+         gameViewController: GameViewController,
          gameBoard: Gameboard,
          gameBoardView: GameboardView,
          markViewPrototype: MarkView) {
@@ -50,7 +50,13 @@ class PlayerGameState: PlayerState {
             gameViewController?.firstPlayerTurnLabel.isHidden = true
             gameViewController?.secondPlayerTurnLabel.isHidden = false
         }
-        print("player")
+        
         gameViewController?.winnerLabel.isHidden = true
+        
+        if let randomPosition = gameBoardView?.getRandomPossiblePosition() {
+            addSign(at: randomPosition)
+        }
+        
+        gameViewController?.nextPlayerTurn()
     }
 }
