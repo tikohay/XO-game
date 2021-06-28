@@ -1,14 +1,14 @@
 //
-//  PlayerGameState.swift
+//  FiveStepsPlayerState.swift
 //  XO-game
 //
-//  Created by Veaceslav Chirita on 17.06.2021.
+//  Created by Karahanyan Levon on 26.06.2021.
 //  Copyright © 2021 plasmon. All rights reserved.
 //
 
 import Foundation
 
-class PlayerGameState: PlayerState {
+class BlindfoldPlayerState: PlayerState {
     
     var isMoveCompleted: Bool = false
     
@@ -18,7 +18,6 @@ class PlayerGameState: PlayerState {
     weak var gameBoardView: GameboardView?
     
     let markViewPrototype: MarkView
-    
     
     init(player: Player, gameViewController: GameViewController,
          gameBoard: Gameboard,
@@ -32,14 +31,22 @@ class PlayerGameState: PlayerState {
     }
     
     func addSign(at position: GameboardPosition) {
-        guard let gameBoardView = gameBoardView, gameBoardView.canPlaceMarkView(at: position) else { return }
+        guard let gameBoardView = gameBoardView,
+              gameBoardView.canPlaceMarkView(at: position),
+              let gameBoard = gameBoard
+        else { return }
         
         Logger.shared.log(action: .playerSetSign(player: player, position: position))
-        gameBoard?.setPlayer(player, at: position)
+        gameBoard.setPlayer(player, at: position)
         gameBoardView.placeMarkView(markViewPrototype.copy(), at: position)
+        gameBoard.add(position: position, for: player)
         gameBoardView.deleteFromAllPossiblePositions(position: position)
         
-        isMoveCompleted = true
+        if gameBoard.isStepsCompleted(player: player) {
+            gameBoardView.clear()
+            gameBoard.resetPositions()
+            isMoveCompleted = true
+        }
     }
     
     func begin() {

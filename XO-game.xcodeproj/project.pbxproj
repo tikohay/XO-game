@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3C2C850E26862767007162B4 /* BotGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C850D26862767007162B4 /* BotGameState.swift */; };
 		3C2C851126862FD9007162B4 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2C851026862FD9007162B4 /* PlayerState.swift */; };
+		3C451F7326886A7600ADED22 /* BlindfoldGameEndState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C451F7226886A7600ADED22 /* BlindfoldGameEndState.swift */; };
+		3CC233E7268767CB008F04A0 /* BlindfoldPlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC233E6268767CB008F04A0 /* BlindfoldPlayerState.swift */; };
+		3CC233E926876B47008F04A0 /* BlindfoldStepsCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC233E826876B47008F04A0 /* BlindfoldStepsCount.swift */; };
+		3CC233EB26876C11008F04A0 /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC233EA26876C11008F04A0 /* GameType.swift */; };
 		3CDA6A632684D19F00A4754A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDA6A622684D19F00A4754A /* MainViewController.swift */; };
 		BAABFA69267BBAE800BA673D /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABFA68267BBAE800BA673D /* GameState.swift */; };
 		BAABFA6B267BBB5C00BA673D /* PlayerGameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABFA6A267BBB5C00BA673D /* PlayerGameState.swift */; };
@@ -38,6 +42,10 @@
 /* Begin PBXFileReference section */
 		3C2C850D26862767007162B4 /* BotGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotGameState.swift; sourceTree = "<group>"; };
 		3C2C851026862FD9007162B4 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		3C451F7226886A7600ADED22 /* BlindfoldGameEndState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlindfoldGameEndState.swift; sourceTree = "<group>"; };
+		3CC233E6268767CB008F04A0 /* BlindfoldPlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlindfoldPlayerState.swift; sourceTree = "<group>"; };
+		3CC233E826876B47008F04A0 /* BlindfoldStepsCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlindfoldStepsCount.swift; sourceTree = "<group>"; };
+		3CC233EA26876C11008F04A0 /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		3CDA6A622684D19F00A4754A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BAABFA68267BBAE800BA673D /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		BAABFA6A267BBB5C00BA673D /* PlayerGameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerGameState.swift; sourceTree = "<group>"; };
@@ -84,7 +92,9 @@
 				3C2C851026862FD9007162B4 /* PlayerState.swift */,
 				BAABFA6A267BBB5C00BA673D /* PlayerGameState.swift */,
 				3C2C850D26862767007162B4 /* BotGameState.swift */,
+				3CC233E6268767CB008F04A0 /* BlindfoldPlayerState.swift */,
 				BAABFA6C267BBD9000BA673D /* GameEndState.swift */,
+				3C451F7226886A7600ADED22 /* BlindfoldGameEndState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -169,8 +179,10 @@
 			children = (
 				F874E4DC2225C25D00364CAE /* GameboardPosition.swift */,
 				F874E4F22225E0B100364CAE /* GameboardSize.swift */,
+				3CC233E826876B47008F04A0 /* BlindfoldStepsCount.swift */,
 				F874E4F42225E2CD00364CAE /* Gameboard.swift */,
 				F874E4EE2225DE4500364CAE /* Player.swift */,
+				3CC233EA26876C11008F04A0 /* GameType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,6 +261,7 @@
 				3CDA6A632684D19F00A4754A /* MainViewController.swift in Sources */,
 				3C2C851126862FD9007162B4 /* PlayerState.swift in Sources */,
 				F874E4732224621100364CAE /* GameViewController.swift in Sources */,
+				3CC233EB26876C11008F04A0 /* GameType.swift in Sources */,
 				BAABFA79267BD3DD00BA673D /* LogInvoker.swift in Sources */,
 				3C2C850E26862767007162B4 /* BotGameState.swift in Sources */,
 				F874E4DD2225C25D00364CAE /* GameboardPosition.swift in Sources */,
@@ -258,14 +271,17 @@
 				BAABFA6D267BBD9000BA673D /* GameEndState.swift in Sources */,
 				F874E4712224621100364CAE /* AppDelegate.swift in Sources */,
 				F874E4E22225CABF00364CAE /* OView.swift in Sources */,
+				3CC233E7268767CB008F04A0 /* BlindfoldPlayerState.swift in Sources */,
 				F874E4F32225E0B100364CAE /* GameboardSize.swift in Sources */,
 				F874E4E42225CB0700364CAE /* XView.swift in Sources */,
+				3C451F7326886A7600ADED22 /* BlindfoldGameEndState.swift in Sources */,
 				BAABFA6B267BBB5C00BA673D /* PlayerGameState.swift in Sources */,
 				BAABFA70267BCE0F00BA673D /* Prototype.swift in Sources */,
 				BAABFA77267BD30200BA673D /* LogAction.swift in Sources */,
 				BAABFA75267BD2C900BA673D /* LogCommand.swift in Sources */,
 				BAABFA7B267BD4BA00BA673D /* Logger.swift in Sources */,
 				BAABFA69267BBAE800BA673D /* GameState.swift in Sources */,
+				3CC233E926876B47008F04A0 /* BlindfoldStepsCount.swift in Sources */,
 				F874E4DB2225C1AC00364CAE /* GameboardView.swift in Sources */,
 				BAABFA73267BD29700BA673D /* LogReceiver.swift in Sources */,
 				F874E4EF2225DE4500364CAE /* Player.swift in Sources */,

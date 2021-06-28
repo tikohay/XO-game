@@ -28,6 +28,10 @@ class MainViewController: UIViewController {
         performSegue(withIdentifier: id, sender: GameType.twoPlayers)
     }
     
+    @IBAction func blindfoldTwoPlayersButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: id, sender: GameType.blindfoldTwoPlayers)
+    }
+    
     @IBAction func playWithComputerButtonTapped(_ sender: UIButton) {
         performSegue(withIdentifier: id, sender: GameType.withComputerGame)
     }

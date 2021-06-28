@@ -14,6 +14,9 @@ public final class Gameboard {
     
     private lazy var positions: [[Player?]] = initialPositions()
     
+    public var selectedPositions: [Player : [GameboardPosition]] = [:]
+    public var stepsCount: [Player : Int] = [:]
+    
     // MARK: - public
     
     public func setPlayer(_ player: Player, at position: GameboardPosition) {
@@ -21,6 +24,12 @@ public final class Gameboard {
     }
     
     public func clear() {
+        resetPositions()
+        selectedPositions = [:]
+        stepsCount = [:]
+    }
+    
+    public func resetPositions() {
         self.positions = initialPositions()
     }
     
@@ -36,6 +45,20 @@ public final class Gameboard {
     public func contains(player: Player, at position: GameboardPosition) -> Bool {
         let (column, row) = (position.column, position.row)
         return positions[column][row] == player
+    }
+    
+    public func add(position: GameboardPosition, for player: Player) {
+        if stepsCount[player] == nil {
+            selectedPositions[player] = [position]
+            stepsCount[player] = 1
+        } else {
+            selectedPositions[player]?.append(position)
+            stepsCount[player] = stepsCount[player]! + 1
+        }
+    }
+    
+    public func isStepsCompleted(player: Player) -> Bool {
+        return stepsCount[player] == BlindfoldStepsCount.steps
     }
     
     // MARK: - Private

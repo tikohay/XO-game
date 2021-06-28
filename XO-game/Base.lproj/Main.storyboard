@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5b-fd-fy9">
-                                <rect key="frame" x="81" y="441" width="213" height="100"/>
+                                <rect key="frame" x="81" y="447" width="213" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0dV-fE-9do"/>
                                 </constraints>
@@ -39,14 +39,24 @@
                                     <action selector="twoPlayersButtonTapped:" destination="R6C-xN-weN" eventType="touchUpInside" id="bDY-cv-AEq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxD-k4-rJJ">
+                                <rect key="frame" x="113" y="385" width="149" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Играть вспепую"/>
+                                <connections>
+                                    <action selector="blindfoldTwoPlayersButtonTapped:" destination="R6C-xN-weN" eventType="touchUpInside" id="5up-cG-pTy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygk-Ll-iah"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="R5b-fd-fy9" firstAttribute="top" secondItem="O7f-Eg-MXD" secondAttribute="bottom" constant="83" id="1w3-YQ-rYx"/>
                             <constraint firstItem="O7f-Eg-MXD" firstAttribute="top" secondItem="ygk-Ll-iah" secondAttribute="top" constant="258" id="3iD-Dt-BLz"/>
                             <constraint firstItem="R5b-fd-fy9" firstAttribute="centerX" secondItem="JHZ-xh-Ytl" secondAttribute="centerX" id="EgD-gE-SiR"/>
+                            <constraint firstItem="R5b-fd-fy9" firstAttribute="top" secondItem="DxD-k4-rJJ" secondAttribute="bottom" constant="26" id="Zjd-Df-uHQ"/>
+                            <constraint firstItem="DxD-k4-rJJ" firstAttribute="centerX" secondItem="ygk-Ll-iah" secondAttribute="centerX" id="aFg-g5-a2E"/>
                             <constraint firstItem="O7f-Eg-MXD" firstAttribute="centerX" secondItem="JHZ-xh-Ytl" secondAttribute="centerX" id="qun-HP-LWp"/>
+                            <constraint firstItem="DxD-k4-rJJ" firstAttribute="top" secondItem="O7f-Eg-MXD" secondAttribute="bottom" constant="27" id="ztF-nZ-6At"/>
                         </constraints>
                     </view>
                     <connections>

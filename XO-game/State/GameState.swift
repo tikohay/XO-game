@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum GameType {
-    case twoPlayers
-    case withComputerGame
-}
-
 protocol GameState {
     var isMoveCompleted: Bool { get }
     func addSign(at position: GameboardPosition)

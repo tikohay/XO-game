@@ -55,6 +55,33 @@ class GameViewController: UIViewController {
     func nextPlayerTurn() {
         self.counter += 1
         
+        if gameType == .blindfoldTwoPlayers {
+            blindFoldNextPlayerTurn()
+        } else {
+            otherGameTypeNextPlayerTurn()
+        }
+    }
+    
+    func blindFoldNextPlayerTurn() {
+        if counter == 2 {
+            currentState = BlindfoldGameEndState(gameViewController: self,
+                                                 gameBoard: gameBoard,
+                                                 gameBoardView: gameboardView)
+        }
+        
+        if counter == 2 {
+            let winner = referee.determineWinner()
+            currentState = GameEndState(winnerPlayer: winner, gameViewController: self)
+            return
+        }
+        
+        if let playerState = currentState as? PlayerState {
+            let nextPlayer = playerState.player.next
+            currentState = getPlayerState(player: nextPlayer)
+        }
+    }
+    
+    func otherGameTypeNextPlayerTurn() {
         if let winner = referee.determineWinner() {
             Logger.shared.log(action: .gameFinish(winner: winner))
             currentState = GameEndState(winnerPlayer: winner, gameViewController: self)
@@ -64,6 +91,7 @@ class GameViewController: UIViewController {
         if counter >= 9 {
             Logger.shared.log(action: .gameFinish(winner: nil))
             currentState = GameEndState(winnerPlayer: nil, gameViewController: self)
+            return 
         }
         
         if let playerState = currentState as? PlayerState {
@@ -73,6 +101,14 @@ class GameViewController: UIViewController {
     }
     
     func getPlayerState(player: Player) -> GameState? {
+        if gameType == .blindfoldTwoPlayers {
+            return BlindfoldPlayerState(player: player,
+                                        gameViewController: self,
+                                        gameBoard: gameBoard,
+                                        gameBoardView: gameboardView,
+                                        markViewPrototype: player.markViewPrototype)
+        }
+        
         if player == .first || gameType == .twoPlayers {
             return PlayerGameState(player: player,
                                    gameViewController: self,

@@ -43,6 +43,4 @@ class GameEndState: GameState {
             return "Second"
         }
     }
-    
-    
 }
